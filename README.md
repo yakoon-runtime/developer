@@ -25,10 +25,12 @@ developer/
 
 ## Setup
 
-Requirements: `git` (SSH access to the `yakoon-runtime` org), Python ≥ 3.11.
+Requirements: `git` and Python ≥ 3.11. The repositories are public — no
+GitHub account, SSH keys or token needed. (Pushing later is your own
+choice; configure a remote as you like.)
 
 ```bash
-git clone git@github.com:yakoon-runtime/developer.git yakoon
+git clone https://github.com/yakoon-runtime/developer.git yakoon
 cd yakoon
 ./setup.sh
 code yakoon.code-workspace

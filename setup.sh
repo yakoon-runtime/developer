@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Set up a Yakoon developer workspace from the source repositories.
 #
-#   git clone git@github.com:yakoon-runtime/developer.git yakoon
+#   git clone https://github.com/yakoon-runtime/developer.git yakoon
 #   cd yakoon && ./setup.sh
 #   code yakoon.code-workspace
 #
-# Idempotent: safe to re-run. Reads are credential-free; only cloning the
-# source repositories needs SSH access to the yakoon-runtime org.
+# Idempotent: safe to re-run. The repositories are public, so cloning and
+# installs are credential-free. Only pushing later needs your own GitHub
+# credentials (SSH or a configured remote).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -21,7 +22,7 @@ fi
 for repo in runtime sdk apps launcher pack-system pack-ident pack-crm pack-luma pack-labs; do
     if [ ! -d "$ROOT/$repo/.git" ]; then
         echo "Cloning $repo…"
-        git clone "git@github.com:yakoon-runtime/$repo.git" "$ROOT/$repo"
+        git clone "https://github.com/yakoon-runtime/$repo.git" "$ROOT/$repo"
     fi
 done
 
