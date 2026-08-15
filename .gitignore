@@ -1,0 +1,23 @@
+# Source repositories — cloned by setup.sh, each is its own git repo.
+/runtime/
+/sdk/
+/apps/
+/launcher/
+/pack-system/
+/pack-ident/
+/pack-crm/
+/pack-luma/
+/pack-labs/
+
+# Local environment (machine state, never shared).
+/.yak/
+/.venv/
+/structure/
+/.config/
+
+# Build + editor noise.
+__pycache__/
+*.egg-info/
+build/
+dist/
+*.pyc
