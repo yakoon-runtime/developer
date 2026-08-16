@@ -19,7 +19,7 @@ developer/
 ├── sdk/
 ├── apps/
 ├── launcher/
-├── pack-system/  … pack-labs/
+├── caps-system/  … pack-labs/
 └── .yak/               local context (machine state, ignored)
 ```
 
@@ -43,7 +43,7 @@ platform as sources:
 
 ```text
 runtime → ./runtime ./sdk ./apps      (source)
-system  → ./pack-system               (source)
+system  → ./caps-system               (source)
 ident   → ./pack-ident                (source)
 crm     → ./pack-crm                  (source)
 ```
