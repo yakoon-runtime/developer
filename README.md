@@ -26,8 +26,9 @@ developer/
 ## Setup
 
 Requirements: `git` and Python ≥ 3.11. The repositories are public — no
-GitHub account, SSH keys or token needed. (Pushing later is your own
-choice; configure a remote as you like.)
+GitHub account, SSH keys or token needed to set up the workspace.
+`setup.sh` clones over HTTPS (credential-free) and then switches the
+remotes to SSH, so pushing works immediately once you add your SSH key.
 
 ```bash
 git clone https://github.com/yakoon-runtime/developer.git yakoon
@@ -35,7 +36,6 @@ cd yakoon
 ./setup.sh
 code yakoon.code-workspace
 ```
-
 `setup.sh` clones the source repositories, installs the `yak` tool
 (launcher from PyPI via `pip install yakoon`, the actual tool is pulled
 from `dists` on first use), initializes the context and installs the

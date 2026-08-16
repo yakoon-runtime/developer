@@ -6,8 +6,9 @@
 #   code yakoon.code-workspace
 #
 # Idempotent: safe to re-run. The repositories are public, so cloning and
-# installs are credential-free. Only pushing later needs your own GitHub
-# credentials (SSH or a configured remote).
+# installs are credential-free. After cloning, the remotes are switched to
+# SSH: pushing then works immediately with your GitHub SSH key. Without a
+# key you can still use the workspace read-only.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -23,6 +24,7 @@ for repo in runtime sdk apps launcher pack-system pack-ident pack-crm pack-luma 
     if [ ! -d "$ROOT/$repo/.git" ]; then
         echo "Cloning $repo…"
         git clone "https://github.com/yakoon-runtime/$repo.git" "$ROOT/$repo"
+        git -C "$ROOT/$repo" remote set-url origin "git@github.com:yakoon-runtime/$repo.git"
     fi
 done
 
