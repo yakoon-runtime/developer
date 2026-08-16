@@ -46,11 +46,13 @@ runtime → ./runtime ./sdk ./apps      (source)
 system  → ./caps-system               (source)
 ident   → ./caps-ident               (source)
 crm     → ./caps-contacts            (source)
+worlds  → ./caps-worlds              (source)
+labs    → ./caps-labs                (source)
 ```
 
 Everything is editable from the checkouts: the venv at `.venv` uses the
 code you edit. F5 starts the runtime under the debugger and breakpoints
-land directly in `runtime/`, `sdk/`, `apps/` and the packs.
+land directly in `runtime/`, `sdk/`, `apps/` and the caps.
 
 ## Working inside the runtime
 

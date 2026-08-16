@@ -46,16 +46,23 @@ Always:
 
 Every Python artifact follows the pattern `y5n-<family>-<name>`:
 
-| Family | PyPI name | Python namespace | Purpose |
-|--------|-----------|------------------|---------|
-| **Runtime** | `y5n-runtime-*` | `y5n.runtime.*` | Libraries (api, engine, store, transport, llm, boot) |
-| **Packs** | `y5n-packs-*` | `y5n.packs.*` | Installable content / plugins |
-| **SDK** | `y5n-sdk-*` | `y5n.sdk.*` | Public API for commands |
+| Family | Directory | PyPI name | Python namespace | Purpose |
+|--------|-----------|-----------|------------------|---------|
+| **Runtime** | `packages/runtime-*` | `y5n-runtime-*` | `y5n.runtime.*` | Libraries (api, engine, store, transport, llm, boot) |
+| **Caps** | `caps/caps-*` (multi) or repo root (single) | `y5n-caps-*` | `y5n.caps.*` | Installable capabilities (root, system, ident, contacts, worlds, labs) |
+| **SDK** | `sdk-python` | `y5n-sdk-*` | `y5n.sdk.*` | Public API for commands |
+| **Apps** | `apps/apps-*` | `y5n-apps-*` | `y5n.apps.*` | Host applications (yak, runtime, shell, web, console) |
 
 Rules:
-- Directory name, PyPI name, and Python namespace MUST be consistent.
-- `y5napp-*` / `y5napp.*` or `y5n.apps.*` for packs are NEVER used.
-- Always `y5n.packs.*` for packs, never `y5n.apps.*`.
+- Directory name and Python namespace MUST be consistent; the directory
+  omits the `y5n-` prefix (`apps/apps-yak`, `packages/runtime-engine`,
+  `sdk/sdk-python`).
+- A single-component repo carries `pyproject.toml` in the repo root
+  (`caps-ident/`, `caps-contacts/`, `caps-worlds/`, `caps-labs/`,
+  `launcher/`); a multi-component repo nests them under a family directory
+  (`runtime/packages/`, `runtime/caps/`, `apps/`).
+- `y5napp-*` / `y5napp.*` for caps are NEVER used.
+- Always `y5n.caps.*` for caps, never `y5n.apps.*`.
 - The venv must be installed using `.venv/bin/pip`, not system pip.
 
 ## YakContext architecture
