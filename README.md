@@ -45,7 +45,7 @@ platform as sources:
 runtime → ./runtime ./sdk ./apps      (source)
 system  → ./caps-system               (source)
 ident   → ./caps-ident               (source)
-crm     → ./pack-crm                  (source)
+crm     → ./caps-contacts            (source)
 ```
 
 Everything is editable from the checkouts: the venv at `.venv` uses the
