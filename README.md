@@ -19,7 +19,7 @@ developer/
 ├── sdk/
 ├── apps/
 ├── launcher/
-├── caps-system/  … pack-labs/
+├── caps-system/  … caps-labs/
 └── .yak/               local context (machine state, ignored)
 ```
 
