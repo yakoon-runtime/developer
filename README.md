@@ -44,7 +44,7 @@ platform as sources:
 ```text
 runtime → ./runtime ./sdk ./apps      (source)
 system  → ./caps-system               (source)
-ident   → ./pack-ident                (source)
+ident   → ./caps-ident               (source)
 crm     → ./pack-crm                  (source)
 ```
 

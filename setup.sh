@@ -20,7 +20,7 @@ if ! command -v yak >/dev/null 2>&1; then
 fi
 
 # 2. Source repositories (each is its own git repo, cloned on demand).
-for repo in runtime sdk apps launcher caps-system pack-ident pack-crm pack-luma pack-labs; do
+for repo in runtime sdk apps launcher caps-system caps-ident pack-crm pack-luma pack-labs; do
     if [ ! -d "$ROOT/$repo/.git" ]; then
         echo "Cloning $repo…"
         git clone "https://github.com/yakoon-runtime/$repo.git" "$ROOT/$repo"
@@ -39,7 +39,7 @@ fi
 echo "Installing the platform as sources…"
 yak install runtime --path ./runtime --path ./sdk --path ./apps
 yak install system --path ./caps-system
-yak install ident --path ./pack-ident
+yak install ident --path ./caps-ident
 yak install crm --path ./pack-crm
 
 echo
