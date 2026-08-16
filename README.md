@@ -36,8 +36,9 @@ cd yakoon
 code yakoon.code-workspace
 ```
 
-`setup.sh` clones the source repositories, installs the `yak` launcher
-from PyPI (`pip install yakoon`), initializes the context and installs the
+`setup.sh` clones the source repositories, installs the `yak` tool
+(launcher from PyPI via `pip install yakoon`, the actual tool is pulled
+from `dists` on first use), initializes the context and installs the
 platform as sources:
 
 ```text
@@ -50,6 +51,18 @@ crm     → ./pack-crm                  (source)
 Everything is editable from the checkouts: the venv at `.venv` uses the
 code you edit. F5 starts the runtime under the debugger and breakpoints
 land directly in `runtime/`, `sdk/`, `apps/` and the packs.
+
+## Working inside the runtime
+
+The shell is a separate component, installed on demand:
+
+```bash
+yak install shell     # install the Yakoon shell into the context
+yak shell             # open the shell, running inside the runtime
+```
+
+`yak shell` runs the shell as part of the runtime, so you can work with
+the platform while F5 (Yakoon Runtime) keeps the debugger attached.
 
 ## Where things come from
 
