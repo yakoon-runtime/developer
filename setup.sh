@@ -13,7 +13,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# 1. The yak tool (launcher from PyPI, tool from dists).
+# 1. The yak tool (launcher from PyPI, the tool from its own repo).
 if ! command -v yak >/dev/null 2>&1; then
     echo "Installing yak (pip install yakoon)…"
     python3 -m pip install --user yakoon
@@ -29,7 +29,7 @@ for repo in runtime sdk apps launcher caps-system caps-ident caps-contacts caps-
 done
 
 # 3. Context + the platform as sources (developer mode: everything from
-#    the checkouts, nothing from dists).
+#    the checkouts, nothing released).
 cd "$ROOT"
 if [ ! -d "$ROOT/.yak" ]; then
     echo "Initializing the Yak context…"

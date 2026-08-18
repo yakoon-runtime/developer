@@ -38,8 +38,8 @@ code yakoon.code-workspace
 ```
 `setup.sh` clones the source repositories, installs the `yak` tool
 (launcher from PyPI via `pip install yakoon`, the actual tool is pulled
-from `dists` on first use), initializes the context and installs the
-platform as sources:
+from its own repository's releases on first use), initializes the
+context and installs the platform as sources:
 
 ```text
 runtime → ./runtime ./sdk ./apps      (source)
@@ -70,7 +70,7 @@ the platform while F5 (Yakoon Runtime) keeps the debugger attached.
 
 ```text
 PyPI           yakoon (launcher)     → pip install yakoon
-dists          built software        → github:yakoon-runtime/dists
+apps           the tool (yak)        → github:yakoon-runtime/apps
 sources        code you edit         → the repositories above
 ```
 
