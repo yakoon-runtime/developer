@@ -5,9 +5,9 @@
             "name": "Yakoon Runtime",
             "type": "debugpy",
             "request": "launch",
-            "python": "${workspaceFolder}/.venv/bin/python",
+            "python": "${workspaceFolder:runtime}/../.venv/bin/python",
             "module": "y5n.apps.runtime",
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder:runtime}",
             "justMyCode": false,
             "console": "integratedTerminal"
         }

@@ -6,7 +6,6 @@
     { "name": "caps-worlds", "path": "caps-worlds" }
   ],
   "settings": {
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "python-envs.workspaceSearchPaths": ["./**/.venv"],
     "python-envs.pythonProjects": [
       { "path": "runtime", "envManager": "ms-python.python:venv" },
