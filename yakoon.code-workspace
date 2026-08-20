@@ -1,6 +1,18 @@
 {
   "folders": [
-    { "path": "." }
+    { "name": "runtime", "path": "runtime" },
+    { "name": "sdk-python", "path": "sdk/sdk-python" },
+    { "name": "caps-ident", "path": "caps-ident" },
+    { "name": "caps-worlds", "path": "caps-worlds" }
   ],
-  "settings": {}
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python-envs.workspaceSearchPaths": ["./**/.venv"],
+    "python-envs.pythonProjects": [
+      { "path": "runtime", "envManager": "ms-python.python:venv" },
+      { "path": "sdk/sdk-python", "envManager": "ms-python.python:venv" },
+      { "path": "caps-ident", "envManager": "ms-python.python:venv" },
+      { "path": "caps-worlds", "envManager": "ms-python.python:venv" }
+    ]
+  }
 }
