@@ -65,6 +65,39 @@ Rules:
 - Always `y5n.caps.*` for caps, never `y5n.apps.*`.
 - The venv must be installed using `.venv/bin/pip`, not system pip.
 
+## README conventions
+
+Every public repository README follows one shared frame — a common
+framework, never identical text:
+
+```text
+Title
+Badge(s)
+Status
+
+short description / purpose
+
+... repo-specific content ...
+
+## Links
+- developer (+ runtime for every non-runtime repo)
+```
+
+- **Status** uses the fixed vocabulary only: `Experimental`,
+  `Early development`, `Active development`, `Beta`, `Stable`.
+- **Badges follow CI.** A test badge is added only for a repository that
+  actually runs a CI whose result the badge represents. Never add badges
+  to make READMEs look symmetric.
+- **Badge targets must exist.** No badge or link may point at a
+  non-existent repository.
+- **Navigation intent:** from every public entry README a developer must
+  reliably reach the `developer` (developer setup) and `runtime` (model)
+  repositories. No self-links needed.
+- **Language rule:** engineering terms (catalog, bundle, component,
+  source/artifact, dists, mounting) stay out of the public product story.
+  They belong in a clearly labelled technical section or in the developer
+  documentation.
+
 ## YakContext architecture
 
 `yak` commands follow a Git‑like context model. Every command operates within a

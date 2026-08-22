@@ -1,5 +1,7 @@
 # Yakoon Developer Workspace
 
+**Status: Active development**
+
 The entry point for developing Yakoon. This repository is **not** a Yak
 source: it is glue. It fetches the source repositories, sets up the Yak
 context, and provides the editor configuration. The concrete editor stays
@@ -76,3 +78,7 @@ sources        code you edit         → the repositories above
 
 Reads (install, update) are credential-free; only `yak deploy` needs
 `YAK_GITHUB_TOKEN`.
+
+## Links
+
+- Runtime: [yakoon-runtime/runtime](https://github.com/yakoon-runtime/runtime)
